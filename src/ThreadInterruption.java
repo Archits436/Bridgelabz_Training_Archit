@@ -6,7 +6,7 @@ public class ThreadInterruption {
                 for (int i = 0; i < 10; i++) {
                     if (Thread.currentThread().isInterrupted()) {
                         System.out.println("Task was interrupted.");
-                        return; // Exit the task
+                        return;
                     }
                     Thread.sleep(1000);
                     System.out.println("Task is working... " + (i + 1));
