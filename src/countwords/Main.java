@@ -10,6 +10,10 @@ public class Main {
         int counter = 0;
         FileReader reader = new FileReader("C:\\Users\\Archit.Saxena\\IdeaProjects\\BL-Assignments\\bl-projects\\src\\com\\digi\\Day-11\\src\\countwords\\ text_file.txt");
         try {
+            if(reader.read() == -1) {
+                System.out.println("The text file is empty");
+                return;
+            }
             int i;
             while ((i = reader.read()) != -1) {
                 if(i == 32) {
