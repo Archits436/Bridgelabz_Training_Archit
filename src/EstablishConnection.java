@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class Main {
+public class EstablishConnection {
     public static void main(String[] args) throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/test_db";
         String username = "postgres";
