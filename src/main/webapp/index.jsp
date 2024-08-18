@@ -29,3 +29,20 @@
 </body>
 </html>
 -->
+
+<!-- 3rd Program Conditional
+
+<html>
+<body>
+<h2>Conditional Rendering</h2>
+<%! boolean isLoggedIn=true;%>
+<% if(isLoggedIn){
+        out.println("Welcome to this page");
+    }
+    else{
+        out.println("please log in");
+    }
+%>
+</body>
+</html>
+-->
