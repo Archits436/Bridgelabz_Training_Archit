@@ -46,3 +46,42 @@
 </body>
 </html>
 -->
+
+<!-- 4th program employee table
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.ArrayList, java.util.List, com.example.model.Employee" %>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+    <h2>Employee List</h2>
+    <%
+        ArrayList<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("John Doe", "HR"));
+        employees.add(new Employee("Jane Smith", "Finance"));
+        employees.add(new Employee("Mike Johnson", "IT"));
+
+        request.setAttribute("employeeList", employees);
+    %>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        <%
+             List<Employee> employeeList = (List<Employee>) request.getAttribute("employeeList");
+             for (Employee employee : employeeList) {
+        %>
+                 <tr>
+                    <td><%= employee.getName() %></td>
+                    <td><%= employee.getDepartment() %></td>
+                 </tr>
+           <%
+             }
+            %>
+    </table>
+</body>
+</html>
+-->
