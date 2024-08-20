@@ -21,6 +21,12 @@ public class UserRepository {
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, userRowMapper());
     }
 
+    public void updateUserEmail(Long id, String newEmail) {
+        String sql = "UPDATE users SET email = ? WHERE id = ?;";
+        jdbcTemplate.update(sql, newEmail, id
+        );
+    }
+
     private RowMapper<User> userRowMapper() {
         return (rs, rowNum) -> {
             User user = new User();

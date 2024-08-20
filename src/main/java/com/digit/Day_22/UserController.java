@@ -17,5 +17,9 @@ public class UserController {
     public User getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
+    @PutMapping("users/{id}/email")
+    public void updateUserEmail(@PathVariable Long id, @RequestParam String newEmail) {
+        userService.updateUserEmail(id, newEmail);
+    }
 }
 

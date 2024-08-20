@@ -15,5 +15,9 @@ public class UserService {
     public User getUserById(Long id) {
         return userRepository.getUserById(id);
     }
+
+    public void updateUserEmail(Long id, String newEmail) {
+        userRepository.updateUserEmail(id, newEmail);
+    }
 }
 
