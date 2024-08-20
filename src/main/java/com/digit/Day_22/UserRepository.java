@@ -26,6 +26,10 @@ public class UserRepository {
         jdbcTemplate.update(sql, newEmail, id
         );
     }
+    public void deleteUser(Long id) {
+        String sql = "DELETE FROM users WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+    }
 
     private RowMapper<User> userRowMapper() {
         return (rs, rowNum) -> {

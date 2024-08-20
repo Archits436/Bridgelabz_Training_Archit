@@ -21,5 +21,9 @@ public class UserController {
     public void updateUserEmail(@PathVariable Long id, @RequestParam String newEmail) {
         userService.updateUserEmail(id, newEmail);
     }
+    @DeleteMapping("users/{id}")
+    public void deleteUser(Long id) {
+        userService.deleteUser(id);
+    }
 }
 

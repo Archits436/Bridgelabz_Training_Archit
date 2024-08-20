@@ -19,5 +19,8 @@ public class UserService {
     public void updateUserEmail(Long id, String newEmail) {
         userRepository.updateUserEmail(id, newEmail);
     }
+    public void deleteUser(Long id) {
+        userRepository.deleteUser(id);
+    }
 }
 
