@@ -3,6 +3,8 @@ package com.digit.Day_22;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserController {
 
@@ -20,6 +22,10 @@ public class UserController {
     @PutMapping("users/{id}/email")
     public void updateUserEmail(@PathVariable Long id, @RequestParam String newEmail) {
         userService.updateUserEmail(id, newEmail);
+    }
+    @PostMapping("/addUsers")
+    public void addUsers(@RequestBody List<User> users) {
+        userService.addUsers(users);
     }
     @DeleteMapping("users/{id}")
     public void deleteUser(Long id) {

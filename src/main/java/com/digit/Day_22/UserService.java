@@ -3,6 +3,8 @@ package com.digit.Day_22;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -18,6 +20,10 @@ public class UserService {
 
     public void updateUserEmail(Long id, String newEmail) {
         userRepository.updateUserEmail(id, newEmail);
+    }
+
+    public void addUsers(List<User> users) {
+        userRepository.addUsers(users);
     }
     public void deleteUser(Long id) {
         userRepository.deleteUser(id);

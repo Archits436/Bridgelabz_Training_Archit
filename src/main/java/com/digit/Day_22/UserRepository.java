@@ -5,6 +5,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class UserRepository {
 
@@ -25,6 +27,14 @@ public class UserRepository {
         String sql = "UPDATE users SET email = ? WHERE id = ?;";
         jdbcTemplate.update(sql, newEmail, id
         );
+    }
+
+    public void addUsers(List<User> users) {
+        String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+        jdbcTemplate.batchUpdate(sql, users, users.size(), (ps, user) -> {
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+        });
     }
     public void deleteUser(Long id) {
         String sql = "DELETE FROM users WHERE id = ?";
