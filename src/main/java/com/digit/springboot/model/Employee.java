@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String firstName;
-    private String lastName;
+    private Long id;
+    private String firstname;
+    private String lastname;
     private String email;
     private String department;
     private int salary;

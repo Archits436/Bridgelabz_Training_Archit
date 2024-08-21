@@ -16,22 +16,22 @@ public class EmployeeService {
     public Employee createEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
-    public Optional<Employee> getEmployeeById(int id) {
+    public Optional<Employee> getEmployeeById(Long id) {
         return employeeRepository.findById(id);
     }
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
-    public Employee updateEmployee(int id, Employee employeeDetails) {
+    public Employee updateEmployee(Long id, Employee employeeDetails) {
         Employee employee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found"));
-        employee.setFirstName(employeeDetails.getFirstName());
-        employee.setLastName(employeeDetails.getLastName());
+        employee.setFirstname(employeeDetails.getFirstname());
+        employee.setLastname(employeeDetails.getLastname());
         employee.setEmail(employeeDetails.getEmail());
         employee.setDepartment(employeeDetails.getDepartment());
         employee.setSalary(employeeDetails.getSalary());
         return employeeRepository.save(employee);
     }
-    public void deleteEmployee(int id) {
+    public void deleteEmployee(Long id) {
         employeeRepository.deleteById(id);
     }
 }
