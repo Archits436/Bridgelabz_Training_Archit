@@ -31,5 +31,10 @@ public class UserController {
     public void deleteUser(Long id) {
         userService.deleteUser(id);
     }
+
+    @GetMapping("users")
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
 }
 

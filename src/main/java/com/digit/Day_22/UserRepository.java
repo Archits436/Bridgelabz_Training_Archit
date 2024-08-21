@@ -41,6 +41,11 @@ public class UserRepository {
         jdbcTemplate.update(sql, id);
     }
 
+    public List<User> getAllUsers() {
+        String sql = "SELECT * FROM users";
+        return jdbcTemplate.query(sql, userRowMapper());
+    }
+
     private RowMapper<User> userRowMapper() {
         return (rs, rowNum) -> {
             User user = new User();
